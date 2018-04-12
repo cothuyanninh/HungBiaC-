@@ -1,7 +1,0 @@
-﻿Project Name : Hứng Bia
-Compereser : Trần Công Minh - 15021327
-
-Project Game Hứng Bia được viết bằng C++ sử dụng thư viện SDL.
-
-
-Trong project có tham khảo kiến trúc và cách development tại trang web phattrienphanmmem123.xyz
