@@ -53,7 +53,7 @@ int main(int arc, char*argv[])
 		}
 	p_threat->SetRect(rand_x , SCREEN_HEIGHT - t*400);
 
-	p_threat-> set_y_val(5);
+	p_threat-> set_y_val(2);
 	// p_threat-> set_x_val(5);
 	}
 
@@ -81,13 +81,26 @@ int main(int arc, char*argv[])
 			{
 			p_threat->Show(g_screen);
 			p_threat->HandleMove(SCREEN_WIDTH, SCREEN_HEIGHT);
+
+
+			// Check collision beer va box
+			bool is_col = SDLCommonFunc::CheckColiision(human_object.GetRect(), p_threat->GetRect());
+			if (is_col){
+				if (MessageBox(NULL, L"GAME OVER", L"QUIT", MB_OK) == IDOK)
+					{
+						delete [] p_threats;
+						SDLCommonFunc::CleanUp();
+						SDL_Quit();
+						return 1;
+					}
+				}
 			}
 		}
     if ( SDL_Flip(g_screen) == -1)
       return 0;
   }
 
-
+  delete [] p_threats;
 
 
   SDLCommonFunc::CleanUp();

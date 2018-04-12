@@ -16,7 +16,7 @@ ThreatObject::~ThreatObject(){
 
 void ThreatObject::HandleMove(const int& x_border, const int& y_border){
 	rect_.y += y_val_;
-	if (rect_.y > SCREEN_HEIGHT-100){
+	if (rect_.y > SCREEN_HEIGHT-50){
 		rect_.y = 0;
 		int rand_x = rand()%450;
 		if(rand_x < SCREEN_WIDTH -700){

@@ -20,7 +20,6 @@ SDL_Surface* SDLCommonFunc::LoadImage(std::string file_path)
   return optimize_image;
 }
 
-
 void SDLCommonFunc::ApplySurface(SDL_Surface* src, SDL_Surface* des, int x, int y)
 {
   SDL_Rect offset;
@@ -29,6 +28,34 @@ void SDLCommonFunc::ApplySurface(SDL_Surface* src, SDL_Surface* des, int x, int 
   SDL_BlitSurface(src, NULL, des, &offset);
 }
 
+bool SDLCommonFunc::CheckColiision(const SDL_Rect& object1 , const SDL_Rect& object2)
+{
+	// box
+  int left_a = object1.x;
+  int right_a = object1.x + object1.w;
+  int top_a = object1.y;
+  int bottom_a = object1.y + object1.h;
+	// beer
+  int left_b = object2.x;
+  int right_b = object2.x + object2.w;
+  int top_b = object2.y;
+  int bottom_b = object2.y + object2.h;
+ 
+  // Beer o ben trai
+  if (left_a > right_b && bottom_b  >  bottom_a){
+	return true;
+  }
+  // Beer o ben phai
+  if (left_b > right_a && bottom_b  >  bottom_a){
+	return true;
+  }
+
+//  if (left_a < left_b && right_b > right_a && ){
+//	return false;
+ // }
+   return false;
+
+}
 
 void SDLCommonFunc::CleanUp()
 {

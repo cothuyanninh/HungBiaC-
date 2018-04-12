@@ -6,8 +6,8 @@
 #include "BaseObject.h"
 #include <vector>
 
-#define WIDTH_MAIN_OBJECT 60
-#define HEIGHT_MAIN_OBJECT 30
+#define WIDTH_MAIN_OBJECT 101
+#define HEIGHT_MAIN_OBJECT 73
 
 class MainObject : public BaseObject
 {
