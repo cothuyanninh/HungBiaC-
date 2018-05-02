@@ -31,30 +31,25 @@ void SDLCommonFunc::ApplySurface(SDL_Surface* src, SDL_Surface* des, int x, int 
 bool SDLCommonFunc::CheckColiision(const SDL_Rect& object1 , const SDL_Rect& object2)
 {
 	// box
-  int left_a = object1.x;
-  int right_a = object1.x + object1.w;
-  int top_a = object1.y;
-  int bottom_a = object1.y + object1.h;
+  int left_box = object1.x;
+  int right_box = object1.x + object1.w;
+  int top_box = object1.y;
+  int bottom_box = object1.y + object1.h;
 	// beer
-  int left_b = object2.x;
-  int right_b = object2.x + object2.w;
-  int top_b = object2.y;
-  int bottom_b = object2.y + object2.h;
+  int left_beer = object2.x;
+  int right_beer = object2.x + object2.w;
+  int top_beer = object2.y;
+  int bottom_beer = object2.y + object2.h;
  
   // Beer o ben trai
-  if (left_a > right_b && bottom_b  >  bottom_a){
+  if (left_box > right_beer && bottom_beer  >  bottom_box){
 	return true;
   }
   // Beer o ben phai
-  if (left_b > right_a && bottom_b  >  bottom_a){
+  if (left_beer > right_box && bottom_beer  >  bottom_box){
 	return true;
   }
-
-//  if (left_a < left_b && right_b > right_a && ){
-//	return false;
- // }
    return false;
-
 }
 
 void SDLCommonFunc::CleanUp()

@@ -50,13 +50,12 @@ int main(int arc, char*argv[])
 		return 0;}
 
 	int rand_x = rand()%450;
-	if(rand_x < SCREEN_HEIGHT -400){
+	if (rand_x < SCREEN_HEIGHT - MIDDLE_HEIGHT){
 			rand_x = SCREEN_HEIGHT*0.5;
 		}
-	p_threat->SetRect(rand_x , SCREEN_HEIGHT - t*400);
+	p_threat->SetRect(rand_x, SCREEN_HEIGHT - t*MIDDLE_HEIGHT);
 
 	p_threat-> set_y_val(2);
-	// p_threat-> set_x_val(5);
 	}
 
 	// Thay delay
@@ -76,16 +75,28 @@ int main(int arc, char*argv[])
     human_object.Show(g_screen);
     human_object.HandleMove();
 
-
+	
 	for(int tt= 0; tt < NUM_THREAT; tt++){
 			ThreatObject* p_threat = (p_threats + tt);
+			
 			if(p_threat)
 			{
 			p_threat->Show(g_screen);
 			p_threat->HandleMove(SCREEN_WIDTH, SCREEN_HEIGHT);
+			
 			human_object.Show(g_screen);
-
-
+			if (p_threat->SCORE == 5){
+			//	SPEED++;
+				g_bkground = SDLCommonFunc::LoadImage("background1.png");
+				p_threat->set_y_val(3);
+				//p_threats->set_y_val(2);
+			}
+			if (p_threat->SCORE == 10){
+				//	SPEED++;
+				g_bkground = SDLCommonFunc::LoadImage("background2.png");
+				p_threat->set_y_val(4);
+				//p_threats->set_y_val(3);
+			}
 			// Check collision beer va box
 			bool is_col = SDLCommonFunc::CheckColiision(human_object.GetRect(), p_threat->GetRect());
 			if (is_col){

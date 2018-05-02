@@ -8,6 +8,7 @@ ThreatObject::ThreatObject(){
 
 	x_val_ =0;
 	y_val_ =0;
+	SCORE =0;
 }
 
 ThreatObject::~ThreatObject(){
@@ -16,13 +17,14 @@ ThreatObject::~ThreatObject(){
 
 void ThreatObject::HandleMove(const int& x_border, const int& y_border){
 	rect_.y += y_val_;
-	if (rect_.y > SCREEN_HEIGHT-90){
+	
+	if (rect_.y > SCREEN_HEIGHT - SPACE_BODY_WEIGHT){
+		SCORE++;
 		rect_.y = 0;
 		int rand_x = rand()%450;
-		if(rand_x < SCREEN_WIDTH -700){
+		if(rand_x < SCREEN_WIDTH -SPACE_BODY_HEIGHT){
 			rand_x = SCREEN_WIDTH*0.3;
 		}
 		rect_.x = rand_x;
 	}
 }
-

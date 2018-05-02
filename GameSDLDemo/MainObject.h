@@ -8,6 +8,7 @@
 
 #define WIDTH_MAIN_OBJECT 101
 #define HEIGHT_MAIN_OBJECT 73
+#define BODER_LIMIT 35
 
 class MainObject : public BaseObject
 {

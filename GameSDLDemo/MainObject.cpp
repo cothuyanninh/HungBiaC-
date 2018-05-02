@@ -52,7 +52,7 @@ void MainObject::HandleMove()
 {
   rect_.x += x_val_;
 
-  if (rect_.x < 35 || rect_.x  > SCREEN_WIDTH*0.5)
+  if (rect_.x < BODER_LIMIT || rect_.x  > SCREEN_WIDTH*0.5)
   {
     rect_.x -= x_val_;
   }

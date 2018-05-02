@@ -7,9 +7,12 @@
 
 #define WIDTH_THREAT 30
 #define HEIGHT_THREAT 60
-
+#define SPACE_BODY_HEIGHT 700
+#define SPACE_BODY_WEIGHT 90
 class ThreatObject : public BaseObject{
 public:
+	int SCORE ;
+
 	ThreatObject();
 	~ThreatObject();
 
