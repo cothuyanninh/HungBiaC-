@@ -1,7 +1,17 @@
-﻿Project Name : Hứng Bia
+Project Name : Hứng Bia
 Compereser : Trần Công Minh - 15021327
+Time Coding : 2 days
+Rule of game : 
+
+Người chơi sử dụng các phím mũi tên để diều chỉnh thùng bia sao cho hứng trúng tất cả các chai bia trên màn hình.
+Sau một cấp độ nhất định thì tốc độ rơi của mỗi bia sẽ khác nhau , nhanh hơn và khó hơn tạo cảm giác hứng thú cho người chơi.
+Nếu có bất kì một chai bia nào không rơi trúng thùng thì sẽ game over.
 
 Project Game Hứng Bia được viết bằng C++ sử dụng thư viện SDL.
 
-
 Trong project có tham khảo kiến trúc và cách development tại trang web phattrienphanmmem123.xyz
+
+Game sẽ không thể hoàn thiện nếu không có sự giúp đỡ của thầy Nguyễn Đức Anh, thầy Lê Nguyên Khôi cùng các bạn. 
+Em xin cảm ơn 2 thầy và các bạn đã giúp em hoàn thành project này.
+
+Định hướng phát triển thêm : Sẽ xây dựng game có sự lựa chọn các người mẫu, có thể pause game được, lưu điểm và có 1 ranking score cho game......
